@@ -9,6 +9,14 @@ public class Date {
         this.year = year;
     }
 
+
+    public Date(){
+        this.day = 1;
+        this.month = 1;
+        this.year = 0;
+    }
+
+
     public int hashCode() {
         int hashCode;
         return hashCode;
@@ -17,7 +25,7 @@ public class Date {
 
     @Override
     public boolean equals(Date date) {
-        if (this = date) {
+        if (this == date) {
             return true;
         }
         if () {
