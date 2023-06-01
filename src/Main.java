@@ -1,5 +1,5 @@
 import java.util.Random;
-
+//checkkkkkkk
 public class Main {
     private static Random rnd;
 
