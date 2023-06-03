@@ -17,7 +17,7 @@ public class Date {
     public Date(int day, int month, int year) {
         setDay(day);
         setMonth(month);
-        setYea(year);
+        setYear(year);
     }
 
 
@@ -66,22 +66,34 @@ public class Date {
     }
 
 
+    /**
+     * Indicates whether another object is equal to current object
+     *
+     * @param other the referenced object with which to compare
+     * @return boolean true or false according to the result of the method testing
+     */
     @Override
-    public int hashCode() {
-        int hashCode;
-        return hashCode;
-    }
-
-
-    @Override
-    public boolean equals(Date date) {
-        if (this == date) {
-            return true;
-        }
-        if () {
+    public boolean equals(Object other) {
+        if (!(other instanceof Date)) {
             return false;
         }
-
+        Date otherDate = (Date) other;
+        if (this == otherDate) {
+            return true;
+        }
+        return (this.day == otherDate.day && this.month == otherDate.month && this.year == otherDate.year);
     }
+
+
+    /**
+     * Returns a hash code value for the object based on the number of day passed/left to the date 01/01/-3999
+     *
+     * @return
+     */
+    @Override
+    public int hashCode() {
+        return day + 31 * month + 31 * 12 * (year + 3999);
+    }
+
 
 }
