@@ -72,6 +72,9 @@ public class Date {
      * @param other the referenced object with which to compare
      * @return boolean true or false according to the result of the method testing
      */
+    // might need to add more conditions to make sure
+    // variable with dynamic type Date won't equal to
+    // variable with dynamic type DateTime
     @Override
     public boolean equals(Object other) {
         if (!(other instanceof Date)) {
@@ -88,7 +91,7 @@ public class Date {
     /**
      * Returns a hash code value for the object based on the number of day passed/left to the date 01/01/-3999
      *
-     * @return
+     * @return a hash value for the object
      */
     @Override
     public int hashCode() {
