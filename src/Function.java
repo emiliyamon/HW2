@@ -9,7 +9,7 @@ abstract class Function {
     public double bisectionMethod(double a, double b, double epsilon) {
         // assumptions:
         // function is continuous in [a,b]
-        // f(a)*f(b)<0
+        // f(a) * f(b) < 0
         // there is only one root in [a,b]
 
         double left = a;
