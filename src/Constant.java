@@ -5,6 +5,8 @@ public class Constant extends Function {
         this.constant = x;
     }
 
+
+    @Override
     public double valueAt(double x) {
         return constant;
     }
@@ -16,8 +18,9 @@ public class Constant extends Function {
     }
 
 
-    public Function derivative() {
-        return new Function("0");
+    @Override
+    public String derivative() {
+        return "0" ;
     }
 
 }
