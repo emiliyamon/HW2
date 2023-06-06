@@ -4,7 +4,7 @@ abstract class Function {
 
     public abstract String toString();
 
-    public abstract String derivative();
+    public abstract Function derivative();
 
     public double bisectionMethod(double a, double b, double epsilon) {
         // assumptions:
@@ -41,11 +41,30 @@ abstract class Function {
     }
 
     public double newtonRaphsonMethod(double a, double epsilon) {
+        double x = a;
 
+        do {
+            double fx0 = this.valueAt(x);
+            Function dfx = this.derivative();
+            double dfx0 = dfx.valueAt(x);
+            x -= fx0 / dfx0;
+        } while (this.valueAt(x) < epsilon);
+
+        return x;
     }
 
     public double newtonRaphsonMethod(double a) {
+        double x = a;
+        double epsilon = 0.00001;
 
+        do {
+            double fx0 = this.valueAt(x);
+            Function dfx = this.derivative();
+            double dfx0 = dfx.valueAt(x);
+            x -= fx0 / dfx0;
+        } while (this.valueAt(x) < epsilon);
+
+        return x;
     }
 
     public Function taylorPolynomial(int n) {
