@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bdd43fff-1fb9-4fe6-aa6f-837fdea39ae8" name="Changes" comment="0306 1801 updates in Function, Constant">
+    <list default="true" id="bdd43fff-1fb9-4fe6-aa6f-837fdea39ae8" name="Changes" comment="0306 1919 don't know what changed but commit anyway">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Constant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Function.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Function.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,8 +103,33 @@
       <option name="project" value="LOCAL" />
       <updated>1685804531159</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="0306 1801 updates in Function">
+      <created>1685808913293</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1685808913293</updated>
+    </task>
+    <task id="LOCAL-00010" summary="0306 1919 don't know what changed but commit anyway">
+      <created>1685809185378</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1685809185378</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="hithalnuuuu" />
@@ -116,6 +140,8 @@
     <MESSAGE value="0306 1544 updates in class Date" />
     <MESSAGE value="0306 1549 done with class Date (for now)" />
     <MESSAGE value="0306 1801 updates in Function, Constant" />
-    <option name="LAST_COMMIT_MESSAGE" value="0306 1801 updates in Function, Constant" />
+    <MESSAGE value="0306 1801 updates in Function" />
+    <MESSAGE value="0306 1919 don't know what changed but commit anyway" />
+    <option name="LAST_COMMIT_MESSAGE" value="0306 1919 don't know what changed but commit anyway" />
   </component>
 </project>
