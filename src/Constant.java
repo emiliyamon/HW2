@@ -19,8 +19,8 @@ public class Constant extends Function {
 
 
     @Override
-    public String derivative() {
-        return "0" ;
+    public Function derivative() {
+        return new Constant(0);
     }
 
 }

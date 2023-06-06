@@ -68,7 +68,33 @@ abstract class Function {
     }
 
     public Function taylorPolynomial(int n) {
+        int count = n;
+        Function f = this;
+        Function term = this;
 
+        if (n==0) {
+            return f;
+        } else {
+            while (count < n+1) {
+                Function nthDerivative = f.derivative();
+                double factorial = factorial(n);
+                Function factorialFunction = new Constant(1/factorial);
+                Function nthTerm = nthDerivative * factorialFunction;
+                term = term.sum(nthDerivative);
+                count ++;
+            }
+        }
+        return term;
     }
+
+
+    public static double factorial(int n) {
+        if (n==0 || n == 1) {
+            return 1;
+        } else {
+            return n * factorial(n - 1);
+        }
+    }
+
 
 }
