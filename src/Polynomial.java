@@ -3,9 +3,9 @@ public class Polynomial extends Function {
 
     public Polynomial(double... coefficientsSet) {
         int length = coefficientsSet.length;
-        double[] coefficients = new double[length];
+        this.coefficients = new double[length];
         for (int i = 0; i < length; i++) {
-            coefficients[i] = coefficientsSet[i];
+            this.coefficients[i] = coefficientsSet[i];
         }
     }
 
