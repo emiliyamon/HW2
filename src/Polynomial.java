@@ -35,11 +35,10 @@ public class Polynomial extends Function {
             } else if (coefficients[i] == (int) coefficients[i]) {
                 terms[i] = (int) coefficients[i] + "x^" + i;
             }
+            sb.append(coefficients[i]);
             if (coefficients[i] < 0) {
-                sb.append(coefficients[i]);
                 sb.append("+");
             } else {
-                sb.append(coefficients[i]);
                 sb.append("-");
             }
         }
@@ -49,7 +48,20 @@ public class Polynomial extends Function {
 
     @Override
     public Function derivative() {
-        return new Constant(0);
+        double[] derivativeCoefficent = new double[coefficients.length];
+        derivativeCoefficent[0] = 0.0;
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 1; i < coefficients.length; i++) {
+            derivativeCoefficent[i] = coefficients[i] * i;
+            sb.append(derivativeCoefficent[i]);
+            if (coefficients[i] < 0) {
+                sb.append("+");
+            } else {
+                sb.append("-");
+            }
+        }
+        String derivativeString = sb.toString(); // need to change to return new polynomial
     }
 
 }
