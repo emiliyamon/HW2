@@ -37,6 +37,20 @@ public class DateTime extends Date {
         }
     }
 
+    /**
+     * Indicates whether another object is equal to current object
+     *
+     * @param other the referenced object with which to compare
+     * @return boolean true or false according to the result of the method testing
+     */
+    @Override
+    public boolean equals(Object other) {
+        if (!(other instanceof DateTime)) {
+            return false;
+        }
+        DateTime otherDateTime = (DateTime) other;
+        return (this.minute == otherDateTime.minute && this.hour == otherDateTime.hour); // && this.day == otherDateTime.day && this.month == otherDateTime.month && this.year == otherDateTime.year);
+    }
 
 
 
