@@ -121,29 +121,26 @@ public class Date {
             monthString = Integer.toString(month);
         }
 
-        if (year >= 0 && year < 10) {
-            yearString = "000" + year;
-        }
-        if (year >= 10 && year < 100) {
-            yearString = "00" + year;
-        }
-        if (year >= 100 && year < 1000) {
-            yearString = "0" + year;
-        }
-        if (year >= 1000) {
-            yearString = Integer.toString(year);
-        }
-        if (year < 0 && year > -10) {
-            yearString = "-000" + year;
-        }
-        if (year <= 10 && year > -100) {
-            yearString = "-00" + year;
-        }
-        if (year <= 100 && year > -1000) {
-            yearString = "-0" + year;
-        }
-        if (year <= 1000) {
-            yearString = Integer.toString(year);
+        if (year >= 0) {
+            if (year < 10) {
+                yearString = "000" + year;
+            } else if (year < 100) {
+                yearString = "00" + year;
+            } else if (year < 1000) {
+                yearString = "0" + year;
+            } else {
+                yearString = Integer.toString(year);
+            }
+        } else {
+            if (year > -10) {
+                yearString = "-000" + year;
+            } else if (year > -100) {
+                yearString = "-00" + year;
+            } else if (year > -1000) {
+                yearString = "-0" + year;
+            } else {
+                yearString = Integer.toString(year);
+            }
         }
 
         return dayString + "/" + monthString + "/" + yearString;
