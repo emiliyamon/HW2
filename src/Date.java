@@ -99,4 +99,54 @@ public class Date {
     }
 
 
+    @Override
+    public String toString() {
+        day = getDay();
+        month = getMonth();
+        year = getYear();
+
+        String dayString;
+        String monthString;
+        String yearString;
+
+        if (day < 10) {
+            dayString = "0" + day;
+        } else {
+            dayString = Integer.toString(day);
+        }
+
+        if (month < 10) {
+            monthString = "0" + month;
+        } else {
+            monthString = Integer.toString(month);
+        }
+
+        if (year >= 0 && year < 10) {
+            yearString = "000" + year;
+        }
+        if (year >= 10 && year < 100) {
+            yearString = "00" + year;
+        }
+        if (year >= 100 && year < 1000) {
+            yearString = "0" + year;
+        }
+        if (year >= 1000) {
+            yearString = Integer.toString(year);
+        }
+        if (year < 0 && year > -10) {
+            yearString = "-000" + year;
+        }
+        if (year <= 10 && year > -100) {
+            yearString = "-00" + year;
+        }
+        if (year <= 100 && year > -1000) {
+            yearString = "-0" + year;
+        }
+        if (year <= 1000) {
+            yearString = Integer.toString(year);
+        }
+
+        return dayString + "/" + monthString + "/" + yearString;
+    }
+
 }

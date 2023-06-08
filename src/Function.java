@@ -80,7 +80,7 @@ abstract class Function {
                 double factorial = factorial(n);
                 Function factorialFunction = new Constant(1/factorial);
                 Function nthTerm = nthDerivative * factorialFunction;
-                term = term.sum(nthDerivative);
+                term = nthTerm.sum(nthDerivative);
                 count ++;
             }
         }
