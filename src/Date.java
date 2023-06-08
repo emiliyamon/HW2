@@ -81,7 +81,7 @@ public class Date {
             return false;
         }
         Date otherDate = (Date) other;
-        if (this == otherDate) {
+        if (this == otherDate) { //why did you add this? (84-85)
             return true;
         }
         return (this.day == otherDate.day && this.month == otherDate.month && this.year == otherDate.year);
