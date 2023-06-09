@@ -3,6 +3,7 @@ public class MultiSum extends Function {
 
     public MultiSum(Function... functions) {
         this.functions = functions;
+        // add test to make compile-time error for less than 2 functions
     }
 
     public Function[] getFunctions() {

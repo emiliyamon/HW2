@@ -9,8 +9,8 @@ public class DateTime extends Date {
     private int minute;
 
 
-    public DateTime(int year, int month, int day, int hour, int minute) {
-        super(year, month, day);
+    public DateTime(int day, int month, int year, int hour, int minute) {
+        super(day, month, year);
         setHour(hour);
         setMinute(minute);
     }
