@@ -1,5 +1,5 @@
 public class Polynomial extends Function {
-    private static double[] coefficients;
+    private final double[] coefficients;
 
     public Polynomial(double... coefficientsSet) {
         int length = coefficientsSet.length;
