@@ -9,10 +9,8 @@ public class DateTime extends Date {
     private int minute;
 
 
-    public DateTime(int hour, int minute) {
-        int DateTimeDay = super.getDay();
-        int DateTimeMonth = super.getMonth();
-        int DateTimeYear = super.getYear();
+    public DateTime(int year, int month, int day, int hour, int minute) {
+        super(year, month, day);
         setHour(hour);
         setMinute(minute);
     }
