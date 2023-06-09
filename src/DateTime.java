@@ -41,7 +41,7 @@ public class DateTime extends Date {
     /**
      * Indicates whether another object is equal to current object
      *
-     * @param other the referenced object with which to compare
+     * @param other the referenced object with which to compare.
      * @return boolean true or false according to the result of the method testing
      */
     @Override
