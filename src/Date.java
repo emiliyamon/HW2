@@ -89,7 +89,7 @@ public class Date {
 
 
     /**
-     * Returns a hash code value for the object based on the number of day passed/left to the date 01/01/-3999
+     * Returns a hash code value for the object based on the number of days passed/left to the date 01/01/-3999
      *
      * @return a hash value for the object
      */
@@ -133,11 +133,11 @@ public class Date {
             }
         } else {
             if (year > -10) {
-                yearString = "-000" + year;
+                yearString = "-000" + -year;
             } else if (year > -100) {
-                yearString = "-00" + year;
+                yearString = "-00" + -year;
             } else if (year > -1000) {
-                yearString = "-0" + year;
+                yearString = "-0" + -year;
             } else {
                 yearString = Integer.toString(year);
             }
