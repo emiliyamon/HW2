@@ -10,6 +10,9 @@ public class DateTime extends Date {
 
 
     public DateTime(int hour, int minute) {
+        int DateTimeDay = super.getDay();
+        int DateTimeMonth = super.getMonth();
+        int DateTimeYear = super.getYear();
         setHour(hour);
         setMinute(minute);
     }
@@ -48,10 +51,37 @@ public class DateTime extends Date {
         if (!(other instanceof DateTime)) {
             return false;
         }
+        super.equals(other); //maybe need to add a variable
         DateTime otherDateTime = (DateTime) other;
-        return (this.minute == otherDateTime.minute && this.hour == otherDateTime.hour); // && this.day == otherDateTime.day && this.month == otherDateTime.month && this.year == otherDateTime.year);
+        return (this.minute == otherDateTime.minute && this.hour == otherDateTime.hour);
     }
-
-
+    /**
+     * Returns a hash code value for the object based on the number of minutes passed from midnight.
+     *
+     * @return a hash value for the object
+     */
+    @Override
+    public int hashCode() {
+        return minute + 60 * hour;
+    }
+    @Override
+    public String toString(){
+       String DayMonthYearString = super.toString();
+       minute = getMinute();
+       hour = getHour();
+       String minuteString;
+       String hourString;
+        if (minute < 10) {
+            minuteString = "0" + minute;
+        } else {
+            minuteString = Integer.toString(minute);
+        }
+        if (hour < 10) {
+            hourString = "0" + hour;
+        } else {
+            hourString = Integer.toString(hour);
+        }
+       return DayMonthYearString + " " + hourString + ":" + minuteString;
+    }
 
 }
