@@ -1,7 +1,7 @@
-public class Sum extends MultiSum {
+public class Product extends MultiProduct {
     private Function[] functions;
 
-    public Sum(Function function1, Function function2) {
+    public Product(Function function1, Function function2) {
         this.functions = new Function[2];
         this.functions[0] = function1;
         this.functions[1] = function2;
@@ -18,11 +18,11 @@ public class Sum extends MultiSum {
 
     @Override
     public double valueAt(double x) {
-        double value = 0.0;
+        double sum = 0.0;
         for (Function function : functions) {
-            value *= function.valueAt(x);
+            sum += function.valueAt(x);
         }
-        return value;
+        return sum;
     }
 
 
@@ -32,10 +32,10 @@ public class Sum extends MultiSum {
 
         for (Function function : functions) {
             String functionString = function.toString();
+            sb.append("(");
             sb.append(functionString);
-            sb.append("+");
+            sb.append(")");
         }
-        sb.deleteCharAt(-1); // check later if ok to use
         return sb.toString();
     }
 
@@ -49,6 +49,7 @@ public class Sum extends MultiSum {
             functionsDerivative[i] = function.derivative();
             i++;
         }
-        return new MultiSum(functionsDerivative);
+        return new Sum(new Product(functionsDerivative[0], this.functions[1]),
+                new Product(this.functions[0], functionsDerivative[1]));
     }
 }

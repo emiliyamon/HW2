@@ -1,10 +1,9 @@
-public class Sum extends MultiSum {
+public class MultiProduct extends Function {
     private Function[] functions;
 
-    public Sum(Function function1, Function function2) {
-        this.functions = new Function[2];
-        this.functions[0] = function1;
-        this.functions[1] = function2;
+    public MultiProduct(Function... functions) {
+        this.functions = functions;
+        // add test to make compile-time error for less than 2 functions
     }
 
     public Function[] getFunctions() {
@@ -32,10 +31,10 @@ public class Sum extends MultiSum {
 
         for (Function function : functions) {
             String functionString = function.toString();
+            sb.append("(");
             sb.append(functionString);
-            sb.append("+");
+            sb.append(")");
         }
-        sb.deleteCharAt(-1); // check later if ok to use
         return sb.toString();
     }
 
