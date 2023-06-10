@@ -68,23 +68,14 @@ abstract class Function {
     }
 
     public Function taylorPolynomial(int n) {
-        int count = n;
-        Function f = this;
-        Function term = this;
+        double[] coefficients = new double[n + 1];
 
-        if (n==0) {
-            return f;
-        } else {
-            while (count < n+1) {
-                Function nthDerivative = f.derivative();
-                double factorial = factorial(n);
-                Function factorialFunction = new Constant(1/factorial);
-                Function nthTerm = nthDerivative * factorialFunction;
-                term = nthTerm.sum(nthDerivative);
-                count ++;
-            }
+        for (int i = 0; i <= n; i++) {
+            double derivativeValue = this.derivative().valueAt(0);
+            double termCoefficient = derivativeValue / factorial(i);
+            coefficients[i] = termCoefficient;
         }
-        return term;
+        return new Polynomial(coefficients);
     }
 
 
