@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bdd43fff-1fb9-4fe6-aa6f-837fdea39ae8" name="Changes" comment="1006 2147 still not working">
+    <list default="true" id="bdd43fff-1fb9-4fe6-aa6f-837fdea39ae8" name="Changes" comment="hello">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MultiProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MultiProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MultiSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MultiSum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Polynomial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Polynomial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Date.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DateTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DateTime.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,11 +24,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -273,7 +272,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="0206 2224 updates in Date" />
     <MESSAGE value="0306 1544 updates in class Date" />
     <MESSAGE value="0306 1549 done with class Date (for now)" />
     <MESSAGE value="0306 1801 updates in Function, Constant" />
@@ -298,6 +296,7 @@
     <MESSAGE value="1006 1854 fixes that didn't fix anything" />
     <MESSAGE value="1006 2047 still not working" />
     <MESSAGE value="1006 2147 still not working" />
-    <option name="LAST_COMMIT_MESSAGE" value="1006 2147 still not working" />
+    <MESSAGE value="hello" />
+    <option name="LAST_COMMIT_MESSAGE" value="hello" />
   </component>
 </project>

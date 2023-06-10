@@ -14,7 +14,7 @@ public class Date {
     private int month;
     private int year;
 
-    public Date(int day, int month, int year) {
+    public Date(int year, int month, int day) {
         setDay(day);
         setMonth(month);
         setYear(year);
@@ -84,7 +84,7 @@ public class Date {
         if (this == otherDate) { //why did you add this? (84-85)
             return true;
         }
-        return (this.day == otherDate.day && this.month == otherDate.month && this.year == otherDate.year);
+        return (this.day == otherDate.day && this.month == otherDate.month && this.year == otherDate.year && this.hashCode() == otherDate.hashCode());
     }
 
 
