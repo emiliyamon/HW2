@@ -18,11 +18,11 @@ public class Product extends MultiProduct {
 
     @Override
     public double valueAt(double x) {
-        double sum = 1.0;
+        double value = 1.0;
         for (Function function : functions) {
-            sum *= function.valueAt(x);
+            value *= function.valueAt(x);
         }
-        return sum;
+        return value;
     }
 
 
