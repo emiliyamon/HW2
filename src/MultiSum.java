@@ -1,17 +1,9 @@
 public class MultiSum extends Function {
-    private Function[] functions;
+    public Function[] functions;
 
     public MultiSum(Function... functions) {
         this.functions = functions;
         // add test to make compile-time error for less than 2 functions
-    }
-
-    public Function[] getFunctions() {
-        return functions;
-    }
-
-    public void setFunctions(Function[] functions) {
-        this.functions = functions;
     }
 
 

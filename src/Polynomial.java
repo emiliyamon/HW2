@@ -26,8 +26,15 @@ public class Polynomial extends Function {
         StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < coefficients.length; i++) {
+
             if (coefficients[i] == 0.0) {
-                terms[i] = "x";;
+                terms[i] = "";
+            } else if (i == 0) {
+                if (coefficients[i] == (int) coefficients[i]) {
+                    terms[i] = String.valueOf((int) coefficients[i]);
+                } else {
+                    terms[i] = String.valueOf(coefficients[i]);
+                }
             } else if (coefficients[i] == 1.0) {
                 terms[i] = "x^" + i;
             } else if (coefficients[i] == -1.0) {
@@ -36,9 +43,9 @@ public class Polynomial extends Function {
                 terms[i] = (int) coefficients[i] + "x^" + i;
             }
 
-            if (coefficients[i] > 0 && i > 0) {
+            if (coefficients[i] > 0 && i > 1) {
                 sb.append("+");
-            } else if (coefficients[i] < 0 && i > 0){
+            } else if (coefficients[i] < 0 && i > 1){
                 sb.append("-");
             }
 
