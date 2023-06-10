@@ -71,7 +71,7 @@ abstract class Function {
         double[] coefficients = new double[n + 1];
         coefficients[0] = this.valueAt(0);
 
-        for (int i = 0; i <= n; i++) {
+        for (int i = 1; i < n + 1; i++) {
             Function f = this;
             for (int j = 0; j < i; j++) {
                 f = f.derivative();

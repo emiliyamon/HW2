@@ -29,10 +29,10 @@ public class MultiSum extends Function {
     public String toString() {
         StringBuilder sb = new StringBuilder();
 
-        for (Function function : functions) {
-            String functionString = function.toString();
-            sb.append(functionString);
-            sb.append(" + ");
+        for (Function function : this.functions) {
+            sb.append("(");
+            sb.append(function.toString());
+            sb.append(") * ");
         }
         for (int i = 0; i < 3; i++) { // eliminate the trailing symbol
             sb.deleteCharAt(sb.length() - 1); // check later if ok to use

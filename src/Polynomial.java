@@ -27,7 +27,7 @@ public class Polynomial extends Function {
 
         for (int i = 0; i < coefficients.length; i++) {
             if (coefficients[i] == 0.0) {
-                continue;
+                terms[i] = "x";;
             } else if (coefficients[i] == 1.0) {
                 terms[i] = "x^" + i;
             } else if (coefficients[i] == -1.0) {

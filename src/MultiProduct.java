@@ -29,10 +29,9 @@ public class MultiProduct extends Function {
     public String toString() {
         StringBuilder sb = new StringBuilder();
 
-        for (Function function : functions) {
-            String functionString = function.toString();
+        for (Function function : this.functions) {
             sb.append("(");
-            sb.append(functionString);
+            sb.append(function.toString());
             sb.append(") * ");
         }
         for (int i = 0; i < 3; i++) { // eliminate the trailing symbol
