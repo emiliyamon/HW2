@@ -77,10 +77,9 @@ abstract class Function {
                 f = f.derivative();
             }
 
-            double derivativeValue = f.valueAt(0);
-            double termCoefficient = derivativeValue / factorial(i);
+            double termCoefficient = f.valueAt(0) / factorial(i);
             if (Double.isNaN(termCoefficient)) { // check later if ok to use
-                termCoefficient = 0.0;
+                termCoefficient = 0;
             }
             coefficients[i] = termCoefficient;
         }
