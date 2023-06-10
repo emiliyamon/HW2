@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bdd43fff-1fb9-4fe6-aa6f-837fdea39ae8" name="Changes" comment="1006 1444 taylorPolynomial">
+    <list default="true" id="bdd43fff-1fb9-4fe6-aa6f-837fdea39ae8" name="Changes" comment="1006 1545 fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Constant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Difference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Difference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Function.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Function.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MultiProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MultiProduct.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MultiSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MultiSum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Polynomial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Polynomial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Negation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Negation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Quotient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Quotient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Sum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sum.java" afterDir="false" />
@@ -28,6 +30,19 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="6b222073-db93-41e4-a0ed-5733163f41cd" />
+        <option name="url" value="https://github.com/emiliyamon/HW2.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -221,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686397456568</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="1006 1545 fixes">
+      <created>1686401111419</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1686401111419</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -236,7 +258,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="hithalnuuuu" />
     <MESSAGE value="0106 1700 stated classes Date and DateTime" />
     <MESSAGE value="0106 1740 stated classes Date and DateTime" />
     <MESSAGE value="0206 2117 updates in Date" />
@@ -261,6 +282,7 @@
     <MESSAGE value="1006 1347 Negation" />
     <MESSAGE value="1006 1417 Polynomial" />
     <MESSAGE value="1006 1444 taylorPolynomial" />
-    <option name="LAST_COMMIT_MESSAGE" value="1006 1444 taylorPolynomial" />
+    <MESSAGE value="1006 1545 fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="1006 1545 fixes" />
   </component>
 </project>

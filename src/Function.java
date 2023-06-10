@@ -69,10 +69,19 @@ abstract class Function {
 
     public Function taylorPolynomial(int n) {
         double[] coefficients = new double[n + 1];
+        coefficients[0] = this.valueAt(0);
 
         for (int i = 0; i <= n; i++) {
-            double derivativeValue = this.derivative().valueAt(0);
+            Function f = this;
+            for (int j = 0; j < i; j++) {
+                f = f.derivative();
+            }
+
+            double derivativeValue = f.valueAt(0);
             double termCoefficient = derivativeValue / factorial(i);
+            if (Double.isNaN(termCoefficient)) { // check later if ok to use
+                termCoefficient = 0.0;
+            }
             coefficients[i] = termCoefficient;
         }
         return new Polynomial(coefficients);

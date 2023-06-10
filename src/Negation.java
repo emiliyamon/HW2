@@ -39,4 +39,9 @@ public class Negation extends Function {
     public Function derivative() {
         return function.derivative();
     }
+
+    public Function taylorPolynomial(int n) {
+        return super.taylorPolynomial(n);
+    }
+
 }

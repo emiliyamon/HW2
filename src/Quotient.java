@@ -53,4 +53,5 @@ public class Quotient extends Function {
                 new Product(this.functions[0], functionsDerivative[1]))),
                 new Power(this.functions[1], 2));
     }
+
 }

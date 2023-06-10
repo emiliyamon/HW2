@@ -34,12 +34,13 @@ public class Product extends MultiProduct {
             String functionString = function.toString();
             sb.append("(");
             sb.append(functionString);
-            sb.append(")*");
+            sb.append(") * ");
         }
 
-        if (sb.length() > 0) {
+        for (int i = 0; i < 3; i++) { // eliminate the trailing symbol
             sb.deleteCharAt(sb.length() - 1); // check later if ok to use
         }
+
         return sb.toString();
     }
 
@@ -56,4 +57,5 @@ public class Product extends MultiProduct {
         return new Sum(new Product(functionsDerivative[0], this.functions[1]),
                 new Product(this.functions[0], functionsDerivative[1]));
     }
+
 }

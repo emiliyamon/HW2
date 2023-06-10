@@ -18,11 +18,11 @@ public class Sum extends MultiSum {
 
     @Override
     public double valueAt(double x) {
-        double value = 0.0;
+        double sum = 0.0;
         for (Function function : functions) {
-            value *= function.valueAt(x);
+            sum += function.valueAt(x);
         }
-        return value;
+        return sum;
     }
 
 
@@ -33,9 +33,12 @@ public class Sum extends MultiSum {
         for (Function function : functions) {
             String functionString = function.toString();
             sb.append(functionString);
-            sb.append("+");
+            sb.append(" + ");
         }
-        sb.deleteCharAt(sb.length() - 1); // check later if ok to use
+        for (int i = 0; i < 3; i++) { // eliminate the trailing symbol
+            sb.deleteCharAt(sb.length() - 1); // check later if ok to use
+        }
+
         return sb.toString();
     }
 

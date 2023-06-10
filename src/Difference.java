@@ -52,4 +52,9 @@ public class Difference extends Function {
         }
         return new MultiSum(functionsDerivative);
     }
+
+    public Function taylorPolynomial(int n) {
+        return super.taylorPolynomial(n);
+    }
+
 }

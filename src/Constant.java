@@ -14,7 +14,11 @@ public class Constant extends Function {
 
     @Override
     public String toString() {
-        return String.valueOf(constant);
+        if (constant == (int) constant) {
+            return "(" + (int) constant + ")";
+        } else {
+            return "(" + constant + ")";
+        }
     }
 
 
@@ -22,5 +26,4 @@ public class Constant extends Function {
     public Function derivative() {
         return new Constant(0);
     }
-
 }

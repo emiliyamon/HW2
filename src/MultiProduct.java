@@ -33,9 +33,12 @@ public class MultiProduct extends Function {
             String functionString = function.toString();
             sb.append("(");
             sb.append(functionString);
-            sb.append(")*");
+            sb.append(") * ");
         }
-        sb.deleteCharAt(sb.length() - 1); // check later if ok to use
+        for (int i = 0; i < 3; i++) { // eliminate the trailing symbol
+            sb.deleteCharAt(sb.length() - 1); // check later if ok to use
+        }
+
         return sb.toString();
     }
 
