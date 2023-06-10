@@ -1,7 +1,7 @@
-public class Product extends MultiProduct {
+public class Quotient extends Function {
     private Function[] functions;
 
-    public Product(Function function1, Function function2) {
+    public Quotient(Function function1, Function function2) {
         this.functions = new Function[2];
         this.functions[0] = function1;
         this.functions[1] = function2;
@@ -18,10 +18,8 @@ public class Product extends MultiProduct {
 
     @Override
     public double valueAt(double x) {
-        double sum = 1.0;
-        for (Function function : functions) {
-            sum *= function.valueAt(x);
-        }
+        double sum = functions[0].valueAt(x);
+        sum /= functions[1].valueAt(x);
         return sum;
     }
 
@@ -34,7 +32,7 @@ public class Product extends MultiProduct {
             String functionString = function.toString();
             sb.append("(");
             sb.append(functionString);
-            sb.append(")*");
+            sb.append(")/");
         }
         sb.deleteCharAt(-1); // check later if ok to use
         return sb.toString();
@@ -50,7 +48,8 @@ public class Product extends MultiProduct {
             functionsDerivative[i] = function.derivative();
             i++;
         }
-        return new Sum(new Product(functionsDerivative[0], this.functions[1]),
-                new Product(this.functions[0], functionsDerivative[1]));
+        return new Quotient((new Difference(new Product(functionsDerivative[0], this.functions[1]),
+                new Product(this.functions[0], functionsDerivative[1]))),
+                new Power(this.functions[1], 2));
     }
 }

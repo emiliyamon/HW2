@@ -17,7 +17,7 @@ public class MultiProduct extends Function {
 
     @Override
     public double valueAt(double x) {
-        double value = 0.0;
+        double value = 1.0;
         for (Function function : functions) {
             value *= function.valueAt(x);
         }
@@ -33,8 +33,9 @@ public class MultiProduct extends Function {
             String functionString = function.toString();
             sb.append("(");
             sb.append(functionString);
-            sb.append(")");
+            sb.append(")*");
         }
+        sb.deleteCharAt(-1); // check later if ok to use
         return sb.toString();
     }
 
