@@ -53,7 +53,7 @@ public class Power extends Function {
             derivativeFunction[0] = new Constant(exponent);
             derivativeFunction[1] = new Power(function, exponent-1);
             derivativeFunction[2] = function.derivative();
-            return new MultiProduct(derivativeFunction);
+            return new MultiProduct(derivativeFunction[0], derivativeFunction[1], derivativeFunction[2]);
         }
     }
 }

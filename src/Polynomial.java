@@ -72,7 +72,12 @@ public class Polynomial extends Function {
             derivativeFunction[i] = new Product(new Constant(derivativeCoefficient[i]), derivativeBase[i]);
         }
 
-        return new MultiSum(derivativeFunction);
+        Function[] derivativeFunctionConstructor = new Function[derivativeFunction.length - 2];
+
+        for (int k = 0; k < derivativeFunctionConstructor.length; k++) {
+            derivativeFunctionConstructor[k] = derivativeFunction[k+2];
+        }
+        return new MultiSum(derivativeFunction[0], derivativeFunction[1], derivativeFunctionConstructor);
     }
 
 }
