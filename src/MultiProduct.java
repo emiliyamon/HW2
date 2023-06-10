@@ -1,7 +1,7 @@
-public class MultiSum extends Function {
+public class MultiProduct extends Function {
     public Function[] functions;
 
-    public MultiSum(Function... functions) {
+    public MultiProduct(Function... functions) {
         this.functions = functions;
         // add test to make compile-time error for less than 2 functions
     }
@@ -9,11 +9,11 @@ public class MultiSum extends Function {
 
     @Override
     public double valueAt(double x) {
-        double sum = 0.0;
+        double value = 1.0;
         for (Function function : functions) {
-            sum += function.valueAt(x);
+            value *= function.valueAt(x);
         }
-        return sum;
+        return value;
     }
 
 
@@ -43,6 +43,20 @@ public class MultiSum extends Function {
             functionsDerivative[i] = function.derivative();
             i++;
         }
-        return new MultiSum(functionsDerivative);
+
+        Function[] derivativeMultiProductI = new Function[functions.length];
+
+        for (i = 0; i < functions.length; i++) {
+            Function[] makeMultiProductI = new Function[functions.length - 1];
+            for (int j = 0; j < makeMultiProductI.length; j++) {
+                if (j != i) {
+                    makeMultiProductI[j] = functions[j];
+                }
+            }
+            Function multiProductI = new MultiProduct(makeMultiProductI);
+            derivativeMultiProductI[i] = new Product(functionsDerivative[i], multiProductI);
+        }
+
+        return new MultiSum(derivativeMultiProductI);
     }
 }

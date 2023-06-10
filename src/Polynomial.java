@@ -26,8 +26,15 @@ public class Polynomial extends Function {
         StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < coefficients.length; i++) {
+
             if (coefficients[i] == 0.0) {
-                continue;
+                terms[i] = "";
+            } else if (i == 0) {
+                if (coefficients[i] == (int) coefficients[i]) {
+                    terms[i] = String.valueOf((int) coefficients[i]);
+                } else {
+                    terms[i] = String.valueOf(coefficients[i]);
+                }
             } else if (coefficients[i] == 1.0) {
                 terms[i] = "x^" + i;
             } else if (coefficients[i] == -1.0) {
@@ -35,12 +42,14 @@ public class Polynomial extends Function {
             } else if (coefficients[i] == (int) coefficients[i]) {
                 terms[i] = (int) coefficients[i] + "x^" + i;
             }
-            sb.append(coefficients[i]);
-            if (coefficients[i] < 0) {
+
+            if (coefficients[i] > 0 && i > 1) {
                 sb.append("+");
-            } else {
+            } else if (coefficients[i] < 0 && i > 1){
                 sb.append("-");
             }
+
+            sb.append(terms[i]);
         }
         return sb.toString();
     }
@@ -48,20 +57,22 @@ public class Polynomial extends Function {
 
     @Override
     public Function derivative() {
-        double[] derivativeCoefficent = new double[coefficients.length];
-        derivativeCoefficent[0] = 0.0;
-        StringBuilder sb = new StringBuilder();
-
-        for (int i = 1; i < coefficients.length; i++) {
-            derivativeCoefficent[i] = coefficients[i] * i;
-            sb.append(derivativeCoefficent[i]);
-            if (coefficients[i] < 0) {
-                sb.append("+");
-            } else {
-                sb.append("-");
-            }
+        double[] derivativeCoefficient = new double[coefficients.length];
+        for (int i = 0; i < coefficients.length; i++) {
+            derivativeCoefficient[i] = coefficients[i] * i;
         }
-        String derivativeString = sb.toString(); // need to change to return new polynomial
+
+        Function[] derivativeBase = new Function[coefficients.length];
+        for (int i = 1; i < coefficients.length; i++) {
+            derivativeBase[i] = new Power(new Polynomial(1), i-1);
+        }
+
+        Function[] derivativeFunction = new Function[coefficients.length];
+        for (int i = 0; i < coefficients.length; i++) {
+            derivativeFunction[i] = new Product(new Constant(derivativeCoefficient[i]), derivativeBase[i]);
+        }
+
+        return new MultiSum(derivativeFunction);
     }
 
 }
