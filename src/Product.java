@@ -36,7 +36,10 @@ public class Product extends MultiProduct {
             sb.append(functionString);
             sb.append(")*");
         }
-        sb.deleteCharAt(-1); // check later if ok to use
+
+        if (sb.length() > 0) {
+            sb.deleteCharAt(sb.length() - 1); // check later if ok to use
+        }
         return sb.toString();
     }
 

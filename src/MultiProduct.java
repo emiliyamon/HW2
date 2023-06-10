@@ -35,7 +35,7 @@ public class MultiProduct extends Function {
             sb.append(functionString);
             sb.append(")*");
         }
-        sb.deleteCharAt(-1); // check later if ok to use
+        sb.deleteCharAt(sb.length() - 1); // check later if ok to use
         return sb.toString();
     }
 

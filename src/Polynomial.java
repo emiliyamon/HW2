@@ -35,12 +35,14 @@ public class Polynomial extends Function {
             } else if (coefficients[i] == (int) coefficients[i]) {
                 terms[i] = (int) coefficients[i] + "x^" + i;
             }
-            sb.append(terms[i]);
-            if (coefficients[i] > 0) {
+
+            if (coefficients[i] > 0 && i > 0) {
                 sb.append("+");
-            } else {
+            } else if (coefficients[i] < 0 && i > 0){
                 sb.append("-");
             }
+
+            sb.append(terms[i]);
         }
         return sb.toString();
     }
