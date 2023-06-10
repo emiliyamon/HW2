@@ -48,6 +48,20 @@ public class MultiProduct extends Function {
             functionsDerivative[i] = function.derivative();
             i++;
         }
-        return new MultiSum(functionsDerivative);
+
+        Function[] derivativeMultiProductI = new Function[functions.length];
+
+        for (i = 0; i < functions.length; i++) {
+            Function[] makeMultiProductI = new Function[functions.length - 1];
+            for (int j = 0; j < makeMultiProductI.length; j++) {
+                if (j != i) {
+                    makeMultiProductI[j] = functions[j];
+                }
+            }
+            Function multiProductI = new MultiProduct(makeMultiProductI);
+            derivativeMultiProductI[i] = new Product(functionsDerivative[i], multiProductI);
+        }
+
+        return new MultiSum(derivativeMultiProductI);
     }
 }
