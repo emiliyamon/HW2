@@ -1,9 +1,13 @@
 public class MultiProduct extends Function {
     public Function[] functions;
 
-    public MultiProduct(Function... functions) {
-        this.functions = functions;
-        // add test to make compile-time error for less than 2 functions
+    public MultiProduct(Function function1, Function function2, Function... moreFunctions) {
+        this.functions = new Function[2 + moreFunctions.length];
+        functions[0] = function1;
+        functions[1] = function2;
+        for (int i = 2; i < moreFunctions.length; i++) {
+            functions[i] = moreFunctions[i];
+        }
     }
 
 
@@ -53,10 +57,25 @@ public class MultiProduct extends Function {
                     makeMultiProductI[j] = functions[j];
                 }
             }
-            Function multiProductI = new MultiProduct(makeMultiProductI);
+
+            Function[] makeMultiProductIConstructor = new Function[makeMultiProductI.length - 2];
+            makeMultiProductIConstructor[0] = makeMultiProductI[0];
+            makeMultiProductIConstructor[1] = makeMultiProductI[1];
+
+            for (int k = 2; i < functions.length; i++) {
+                makeMultiProductIConstructor[k] = makeMultiProductI[k];
+            }
+
+
+                Function multiProductI = new MultiProduct(makeMultiProductIConstructor[0], makeMultiProductIConstructor[1], makeMultiProductIConstructor);
             derivativeMultiProductI[i] = new Product(functionsDerivative[i], multiProductI);
         }
 
-        return new MultiSum(derivativeMultiProductI);
+        Function[] derivativeMultiProductIConstructor = new Function[derivativeMultiProductI.length - 2];
+
+        for (int k = 0; k < derivativeMultiProductIConstructor.length; k++) {
+            derivativeMultiProductIConstructor[k] = derivativeMultiProductI[k+2];
+        }
+        return new MultiSum(derivativeMultiProductI[0], derivativeMultiProductI[1], derivativeMultiProductIConstructor);
     }
 }

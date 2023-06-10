@@ -50,7 +50,7 @@ public class Difference extends Function {
             functionsDerivative[i] = function.derivative();
             i++;
         }
-        return new MultiSum(functionsDerivative);
+        return new Difference(functionsDerivative[0], functionsDerivative[1]);
     }
 
     public Function taylorPolynomial(int n) {
