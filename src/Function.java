@@ -15,14 +15,16 @@ abstract class Function {
         double left = a;
         double right = b;
         while (right - left > epsilon) {
-            double mid = (left + right) / 2;
-            if (this.valueAt(left) * this.valueAt(right) > 0) {
+            double mid = (left + right) / 2.0;
+            if (this.valueAt(mid) == 0) {
+                return mid;
+            } else if (this.valueAt(left) * this.valueAt(mid) > 0) {
                 left = mid;
             } else {
                 right = mid;
             }
         }
-        return (left + right) / 2;
+        return (left + right) / 2.0;
     }
 
     public double bisectionMethod(double a, double b) {
@@ -30,25 +32,31 @@ abstract class Function {
         double right = b;
         double epsilon = 0.00001;
         while (right - left > epsilon) {
-            double mid = (left + right) / 2;
-            if (this.valueAt(left) * this.valueAt(right) > 0) {
+            double mid = (left + right) / 2.0;
+            if (this.valueAt(mid) == 0) {
+                return mid;
+            } else if (this.valueAt(left) * this.valueAt(mid) > 0) {
                 left = mid;
             } else {
                 right = mid;
             }
         }
-        return (left + right) / 2;
+        return (left + right) / 2.0;
     }
 
     public double newtonRaphsonMethod(double a, double epsilon) {
         double x = a;
+        double fx0 = this.valueAt(x);
+        Function dfx = this.derivative();
+        double dfx0 = dfx.valueAt(x);
+        double deltaX = fx0 / dfx0;
 
-        do {
-            double fx0 = this.valueAt(x);
-            Function dfx = this.derivative();
-            double dfx0 = dfx.valueAt(x);
-            x -= fx0 / dfx0;
-        } while (this.valueAt(x) < epsilon);
+        while (Math.abs(deltaX) >= epsilon) {
+            x -= deltaX;
+            fx0 = this.valueAt(x);
+            dfx0 = dfx.valueAt(x);
+            deltaX = fx0 / dfx0;
+        }
 
         return x;
     }
@@ -56,13 +64,17 @@ abstract class Function {
     public double newtonRaphsonMethod(double a) {
         double x = a;
         double epsilon = 0.00001;
+        double fx0 = this.valueAt(x);
+        Function dfx = this.derivative();
+        double dfx0 = dfx.valueAt(x);
+        double deltaX = fx0 / dfx0;
 
-        do {
-            double fx0 = this.valueAt(x);
-            Function dfx = this.derivative();
-            double dfx0 = dfx.valueAt(x);
-            x -= fx0 / dfx0;
-        } while (this.valueAt(x) < epsilon);
+        while (Math.abs(deltaX) >= epsilon) {
+            x -= deltaX;
+            fx0 = this.valueAt(x);
+            dfx0 = dfx.valueAt(x);
+            deltaX = fx0 / dfx0;
+        }
 
         return x;
     }
