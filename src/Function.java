@@ -1,11 +1,41 @@
+/**
+ * Represents a function
+ */
 abstract class Function {
 
+    /**
+     * Calculates the value of the function at the given x-coordinate
+     *
+     * @param x the x-coordinate at which to evaluate the function
+     * @return the value of the function at the specified x-coordinate
+     */
     public abstract double valueAt(double x);
 
+
+    /**
+     * Returns a string representation of the function in a specific format
+     *
+     * @return a string representation of the function
+     */
     public abstract String toString();
 
+
+    /**
+     * calculates the derivative of the function
+     *
+     * @return the derivative of the function
+     */
     public abstract Function derivative();
 
+
+    /**
+     * Finds the root of the function using the bisectionMethod method
+     *
+     * @param a the lower bound
+     * @param b the upper bound
+     * @param epsilon the desired accuracy of the root approximation
+     * @return the approximated root of the function
+     */
     public double bisectionMethod(double a, double b, double epsilon) {
         // assumptions:
         // function is continuous in [a,b]
@@ -31,6 +61,14 @@ abstract class Function {
         return bisectionMethod(a, b, Math.pow(10,-5));
     }
 
+
+    /**
+     * Finds the root of the function using the Newton-Raphson method
+     *
+     * @param a the initial value
+     * @param epsilon the desired accuracy of the root approximation
+     * @return the approximated root of the function
+     */
     public double newtonRaphsonMethod(double a, double epsilon) {
         double x = a;
         double fx0 = this.valueAt(x);
@@ -52,6 +90,13 @@ abstract class Function {
         return newtonRaphsonMethod(a, Math.pow(10, -5));
     }
 
+
+    /**
+     * Computes the Taylor polynomial of the function up to the specified degree.
+     *
+     * @param n the degree of the Taylor polynomial
+     * @return the Taylor polynomial
+     */
     public Function taylorPolynomial(int n) {
         double[] coefficients = new double[n + 1];
         coefficients[0] = this.valueAt(0);
@@ -72,6 +117,12 @@ abstract class Function {
     }
 
 
+    /**
+     * Calculates the factorial of a given number
+     *
+     * @param n number to calculate the factorial of
+     * @return the result of the calculation
+     */
     public static double factorial(int n) {
         if (n==0 || n == 1) {
             return 1;
