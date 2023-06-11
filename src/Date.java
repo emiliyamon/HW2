@@ -1,3 +1,6 @@
+/**
+ * Represents a Date superClass, concluding day, month and year.
+ */
 public class Date {
     private static final int DAY_MIN_VALUE = 1;
     private static final int MONTH_MIN_VALUE = 1;
@@ -33,7 +36,14 @@ public class Date {
         return year;
     }
 
-
+    /**
+     * Checking if the number is in defined range (between lower and upper bounds)
+     *
+     * @param num represents the number checked.
+     * @param lowerBound represents the lower bound.
+     * @param upperBound represents the higher bound.
+     * @return boolean true or false according to the number range.
+     */
     public boolean inRange(int num, int lowerBound, int upperBound) {
         return (num >= lowerBound && num <= upperBound);
     }

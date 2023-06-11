@@ -1,3 +1,6 @@
+/**
+ * Represents a DateTime subClass, concluding day, month, year, hour and minutes.
+ */
 public class DateTime extends Date {
     private static final int HOUR_MIN_VALUE = 0;
     private static final int MINUTE_MIN_VALUE = 0;
@@ -20,6 +23,14 @@ public class DateTime extends Date {
     public int getHour() {
         return hour;
     }
+    /**
+     * Checking if the number is in defined range (between lower and upper bounds)
+     *
+     * @param num represents the number checked.
+     * @param lowerBound represents the lower bound.
+     * @param upperBound represents the higher bound.
+     * @return boolean true or false according to the number range.
+     */
     @Override
     public boolean inRange(int num, int lowerBound, int upperBound) {
         return (num >= lowerBound && num <= upperBound);
