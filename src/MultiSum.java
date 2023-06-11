@@ -26,7 +26,7 @@ public class MultiSum extends Function {
         for (Function function : this.functions) {
             sb.append("(");
             sb.append(function.toString());
-            sb.append(") * ");
+            sb.append(") + ");
         }
         for (int i = 0; i < 3; i++) { // eliminate the trailing symbol
             sb.deleteCharAt(sb.length() - 1); // check later if ok to use

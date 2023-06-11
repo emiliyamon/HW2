@@ -44,9 +44,9 @@ public class Polynomial extends Function {
             }
 
             if (coefficients[i] > 0 && i > 1) {
-                sb.append("+");
+                sb.append(" + ");
             } else if (coefficients[i] < 0 && i > 1){
-                sb.append("-");
+                sb.append(" - ");
             }
 
             sb.append(terms[i]);
