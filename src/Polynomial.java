@@ -25,8 +25,8 @@ public class Polynomial extends Function {
         String[] terms = new String[coefficients.length];
         StringBuilder sb = new StringBuilder();
 
+        sb.append("(");
         for (int i = 0; i < coefficients.length; i++) {
-
             if (coefficients[i] == 0.0) {
                 terms[i] = "";
             } else if (i == 0) {
@@ -51,6 +51,7 @@ public class Polynomial extends Function {
 
             sb.append(terms[i]);
         }
+        sb.append(")");
         return sb.toString();
     }
 
