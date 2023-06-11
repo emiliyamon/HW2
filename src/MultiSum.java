@@ -48,10 +48,16 @@ public class MultiSum extends Function {
             i++;
         }
 
-        Function[] functionsDerivativeConstructor = new Function[functionsDerivative.length - 2];
-        for (int k = 0; k < functionsDerivativeConstructor.length; k++) {
-            functionsDerivativeConstructor[k] = functionsDerivative[k+2];
+        if (functionsDerivative.length > 2) {
+            Function[] functionsDerivativeConstructor = new Function[functionsDerivative.length - 2];
+            for (int k = 0; k < functionsDerivativeConstructor.length; k++) {
+                functionsDerivativeConstructor[k] = functionsDerivative[k + 2];
+            }
+            return new MultiSum(functionsDerivative[0], functionsDerivative[1], functionsDerivativeConstructor);
+        } else if (functionsDerivative.length == 2) {
+            return new MultiSum(functionsDerivative[0], functionsDerivative[1]);
+        } else {
+            return (functionsDerivative[0]);
         }
-        return new MultiSum(functionsDerivative[0], functionsDerivative[1], functionsDerivativeConstructor);
     }
 }

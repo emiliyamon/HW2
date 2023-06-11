@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bdd43fff-1fb9-4fe6-aa6f-837fdea39ae8" name="Changes" comment="hello">
+    <list default="true" id="bdd43fff-1fb9-4fe6-aa6f-837fdea39ae8" name="Changes" comment="1006 2219 when you try to fix one mistake you find another 17 - but the original is still not working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Date.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DateTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DateTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MultiProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MultiProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MultiSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MultiSum.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -257,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686422890214</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="1006 2219 when you try to fix one mistake you find another 17 - but the original is still not working">
+      <created>1686424808345</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1686424808345</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -296,7 +303,7 @@
     <MESSAGE value="1006 1854 fixes that didn't fix anything" />
     <MESSAGE value="1006 2047 still not working" />
     <MESSAGE value="1006 2147 still not working" />
-    <MESSAGE value="hello" />
-    <option name="LAST_COMMIT_MESSAGE" value="hello" />
+    <MESSAGE value="1006 2219 when you try to fix one mistake you find another 17 - but the original is still not working" />
+    <option name="LAST_COMMIT_MESSAGE" value="1006 2219 when you try to fix one mistake you find another 17 - but the original is still not working" />
   </component>
 </project>

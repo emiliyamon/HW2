@@ -58,24 +58,38 @@ public class MultiProduct extends Function {
                 }
             }
 
-            Function[] makeMultiProductIConstructor = new Function[makeMultiProductI.length - 2];
-            makeMultiProductIConstructor[0] = makeMultiProductI[0];
-            makeMultiProductIConstructor[1] = makeMultiProductI[1];
+            if (makeMultiProductI.length > 2) {
+                Function[] makeMultiProductIConstructor = new Function[makeMultiProductI.length - 2];
+                makeMultiProductIConstructor[0] = makeMultiProductI[0];
+                makeMultiProductIConstructor[1] = makeMultiProductI[1];
 
-            for (int k = 2; i < functions.length; i++) {
-                makeMultiProductIConstructor[k] = makeMultiProductI[k];
+                for (int k = 0; i < makeMultiProductIConstructor.length; i++) {
+                    makeMultiProductIConstructor[k] = makeMultiProductI[k + 2];
+                }
+
+                Function multiProductI = new MultiProduct(makeMultiProductI[0], makeMultiProductI[1], makeMultiProductIConstructor);
+                derivativeMultiProductI[i] = new Product(functionsDerivative[i], multiProductI);
+            } else if (makeMultiProductI.length == 2) {
+                Function multiProductI = new MultiProduct(makeMultiProductI[0], makeMultiProductI[1]);
+                derivativeMultiProductI[i] = new Product(functionsDerivative[i], multiProductI);
+            } else {
+                Function multiProductI = makeMultiProductI[0];
+                derivativeMultiProductI[i] = new Product(functionsDerivative[i], multiProductI);
             }
-
-
-                Function multiProductI = new MultiProduct(makeMultiProductIConstructor[0], makeMultiProductIConstructor[1], makeMultiProductIConstructor);
-            derivativeMultiProductI[i] = new Product(functionsDerivative[i], multiProductI);
         }
 
-        Function[] derivativeMultiProductIConstructor = new Function[derivativeMultiProductI.length - 2];
+        if (derivativeMultiProductI.length > 2) {
+            Function[] derivativeMultiProductIConstructor = new Function[derivativeMultiProductI.length - 2];
 
-        for (int k = 0; k < derivativeMultiProductIConstructor.length; k++) {
-            derivativeMultiProductIConstructor[k] = derivativeMultiProductI[k+2];
+            for (int k = 0; k < derivativeMultiProductIConstructor.length; k++) {
+                derivativeMultiProductIConstructor[k] = derivativeMultiProductI[k + 2];
+            }
+            return new MultiSum(derivativeMultiProductI[0], derivativeMultiProductI[1], derivativeMultiProductIConstructor);
+        } else if (derivativeMultiProductI.length == 2) {
+            return new Sum(derivativeMultiProductI[0], derivativeMultiProductI[1]);
+        } else {
+            return (derivativeMultiProductI[0]);
         }
-        return new MultiSum(derivativeMultiProductI[0], derivativeMultiProductI[1], derivativeMultiProductIConstructor);
+
     }
 }
