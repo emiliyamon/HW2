@@ -27,15 +27,15 @@ public class Quotient extends Function {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
+        sb.append("(");
 
         for (Function function : functions) {
             String functionString = function.toString();
-            sb.append("(");
             sb.append(functionString);
-            sb.append(")/");
-
+            sb.append(" / ");
         }
-        sb.deleteCharAt(sb.length() - 1); // check later if ok to use
+        sb.append(")");
+
         return sb.toString();
     }
 

@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bdd43fff-1fb9-4fe6-aa6f-837fdea39ae8" name="Changes" comment="1106 1031 fixes in Function methods" />
+    <list default="true" id="bdd43fff-1fb9-4fe6-aa6f-837fdea39ae8" name="Changes" comment="1106 1034 fixes in Function methods">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Difference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Difference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MultiProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MultiProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MultiSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MultiSum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Negation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Negation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Power.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Power.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Quotient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Quotient.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -300,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686468672943</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="1106 1034 fixes in Function methods">
+      <created>1686468866135</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1686468866135</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -315,7 +330,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="0606 1721 newtonRaphsonMethod" />
     <MESSAGE value="0606 1811 Taylor" />
     <MESSAGE value="0806 1937 Date" />
     <MESSAGE value="0806 1937 Date done" />
@@ -340,6 +354,7 @@
     <MESSAGE value="1106 0934 fixed MultiProduct" />
     <MESSAGE value="1106 1010 small fixes" />
     <MESSAGE value="1106 1031 fixes in Function methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="1106 1031 fixes in Function methods" />
+    <MESSAGE value="1106 1034 fixes in Function methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="1106 1034 fixes in Function methods" />
   </component>
 </project>

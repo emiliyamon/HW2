@@ -22,15 +22,15 @@ public class MultiSum extends Function {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
+        sb.append("(");
 
-        for (Function function : this.functions) {
-            sb.append("(");
-            sb.append(function.toString());
-            sb.append(") + ");
+        for (int i = 0; i < functions.length; i++) {
+            sb.append(functions[i].toString());
+            if (i != functions.length - 1) {
+                sb.append(" + ");
+            }
         }
-        for (int i = 0; i < 3; i++) { // eliminate the trailing symbol
-            sb.deleteCharAt(sb.length() - 1); // check later if ok to use
-        }
+        sb.append(")");
 
         return sb.toString();
     }

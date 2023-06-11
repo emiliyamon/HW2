@@ -31,7 +31,7 @@ public class Negation extends Function {
 
     @Override
     public String toString() {
-        return "-(" + functions[0].toString() + ")";
+        return "(-" + functions[0].toString() + ")";
     }
 
 

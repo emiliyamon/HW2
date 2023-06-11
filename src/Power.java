@@ -1,31 +1,14 @@
 public class Power extends Function {
-    private Function function;
-    private int exponent;
+    public Function function;
+    public int exponent;
 
     public Power(Function function, int exponent) {
         this.function = function;
         this.exponent = exponent;
     }
 
-    public Function getFunction() {
-        return function;
-    }
-
-    public void setFunction(Function function) {
-        this.function = function;
-    }
-
-    public int getExponent() {
-        return exponent;
-    }
-
-    public void setExponent(int exponent) {
-        this.exponent = exponent;
-    }
-
     @Override
     public double valueAt(double x) {
-
         return Math.pow(function.valueAt(x), exponent);
     }
 
@@ -33,12 +16,13 @@ public class Power extends Function {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
+        sb.append("(");
 
         String functionString = function.toString();
-        sb.append("(");
         sb.append(functionString);
-        sb.append(")^");
+        sb.append("^");
         sb.append(exponent);
+        sb.append(")");
 
         return sb.toString();
     }
