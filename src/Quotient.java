@@ -1,18 +1,10 @@
 public class Quotient extends Function {
-    private Function[] functions;
+    public Function[] functions;
 
     public Quotient(Function function1, Function function2) {
         this.functions = new Function[2];
         this.functions[0] = function1;
         this.functions[1] = function2;
-    }
-
-    public Function[] getFunctions() {
-        return functions;
-    }
-
-    public void setFunctions(Function[] functions) {
-        this.functions = functions;
     }
 
 
@@ -29,10 +21,11 @@ public class Quotient extends Function {
         StringBuilder sb = new StringBuilder();
         sb.append("(");
 
-        for (Function function : functions) {
-            String functionString = function.toString();
-            sb.append(functionString);
-            sb.append(" / ");
+        for (int i = 0; i < functions.length; i++) {
+            sb.append(functions[i].toString());
+            if (i != functions.length - 1) {
+                sb.append(" / ");
+            }
         }
         sb.append(")");
 

@@ -2,9 +2,8 @@ public class Polynomial extends Function {
     private final double[] coefficients;
 
     public Polynomial(double... coefficientsSet) {
-        int length = coefficientsSet.length;
-        this.coefficients = new double[length];
-        for (int i = 0; i < length; i++) {
+        this.coefficients = new double[coefficientsSet.length];
+        for (int i = 0; i < coefficientsSet.length; i++) {
             this.coefficients[i] = coefficientsSet[i];
         }
     }
@@ -26,6 +25,7 @@ public class Polynomial extends Function {
         StringBuilder sb = new StringBuilder();
 
         sb.append("(");
+
         for (int i = 0; i < coefficients.length; i++) {
             if (coefficients[i] == 0.0) {
                 terms[i] = "";
@@ -35,30 +35,48 @@ public class Polynomial extends Function {
                 } else {
                     terms[i] = String.valueOf(coefficients[i]);
                 }
+            } else if (i == 1) {
+                if (coefficients[i] == (int) coefficients[i]) {
+                    terms[i] = (int) coefficients[i] + "x";
+                } else {
+                    terms[i] = coefficients[i] + "x";
+                }
             } else if (coefficients[i] == 1.0) {
                 terms[i] = "x^" + i;
             } else if (coefficients[i] == -1.0) {
                 terms[i] = "-x^" + i;
             } else if (coefficients[i] == (int) coefficients[i]) {
                 terms[i] = (int) coefficients[i] + "x^" + i;
+            } else {
+                terms[i] = coefficients[i] + "x^" + i;
             }
 
-            if (coefficients[i] > 0 && i > 1) {
-                sb.append(" + ");
-            } else if (coefficients[i] < 0 && i > 1){
-                sb.append(" - ");
+            if (coefficients[i] == 0 || i == 0) {
+                sb.append("");
+            } else if (coefficients[i] > 0) {
+                if (sb.length() > 1) {
+                    sb.append(" + ");
+                } else {
+                    sb.append("");
+                }
+            } else if (coefficients[i] < 0 && i > 1) {
+                if (sb.length() > 1) {
+                    sb.append(" - ");
+                } else {
+                    sb.append("");
+                }
             }
-
             sb.append(terms[i]);
         }
         sb.append(")");
+
         return sb.toString();
     }
 
 
     @Override
     public Function derivative() {
-        if (coefficients.length == 0) {
+        if (coefficients.length == 0 || coefficients.length == 1) {
             return new Constant(0);
         }
 

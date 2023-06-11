@@ -10,10 +10,9 @@ public class Difference extends Function {
 
     @Override
     public double valueAt(double x) {
-        double sum = 0.0;
-        for (Function function : functions) {
-            sum -= function.valueAt(x);
-        }
+        double sum = functions[0].valueAt(x);
+        sum -= functions[1].valueAt(x);
+
         return sum;
     }
 
