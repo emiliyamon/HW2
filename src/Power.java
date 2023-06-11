@@ -1,3 +1,6 @@
+/**
+ * Represents a power function
+ */
 public class Power extends Function {
     public Function function;
     public int exponent;
@@ -7,12 +10,24 @@ public class Power extends Function {
         this.exponent = exponent;
     }
 
+
+    /**
+     * Calculates the value of the function at the given x-coordinate
+     *
+     * @param x the x-coordinate at which to evaluate the function
+     * @return the value of the function at the specified x-coordinate
+     */
     @Override
     public double valueAt(double x) {
         return Math.pow(function.valueAt(x), exponent);
     }
 
 
+    /**
+     * Returns a string representation of the function in a specific format
+     *
+     * @return a string representation of the function
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -28,6 +43,11 @@ public class Power extends Function {
     }
 
 
+    /**
+     * calculates the derivative of the function
+     *
+     * @return the derivative of the function
+     */
     @Override
     public Function derivative() {
         if (exponent == 1) {

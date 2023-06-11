@@ -1,3 +1,6 @@
+/**
+ * Represents a polynomial function
+ */
 public class Polynomial extends Function {
     private final double[] coefficients;
 
@@ -9,6 +12,12 @@ public class Polynomial extends Function {
     }
 
 
+    /**
+     * Calculates the value of the function at the given x-coordinate
+     *
+     * @param x the x-coordinate at which to evaluate the function
+     * @return the value of the function at the specified x-coordinate
+     */
     @Override
     public double valueAt(double x) {
         double value = 0.0;
@@ -18,7 +27,11 @@ public class Polynomial extends Function {
         return value;
     }
 
-
+    /**
+     * Returns a string representation of the function in a specific format
+     *
+     * @return a string representation of the function
+     */
     @Override
     public String toString() {
         String[] terms = new String[coefficients.length];
@@ -90,6 +103,11 @@ public class Polynomial extends Function {
     }
 
 
+    /**
+     * calculates the derivative of the function
+     *
+     * @return the derivative of the function
+     */
     @Override
     public Function derivative() {
         if (coefficients.length == 0 || coefficients.length == 1) {

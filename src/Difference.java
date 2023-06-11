@@ -1,3 +1,6 @@
+/**
+ * Represents a Difference function
+ */
 public class Difference extends Function {
     Function[] functions;
 
@@ -8,6 +11,12 @@ public class Difference extends Function {
     }
 
 
+    /**
+     * Calculates the value of the function at the given x-coordinate
+     *
+     * @param x the x-coordinate at which to evaluate the function
+     * @return the value of the function at the specified x-coordinate
+     */
     @Override
     public double valueAt(double x) {
         double sum = functions[0].valueAt(x);
@@ -17,6 +26,11 @@ public class Difference extends Function {
     }
 
 
+    /**
+     * Returns a string representation of the function in a specific format
+     *
+     * @return a string representation of the function
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -34,6 +48,11 @@ public class Difference extends Function {
     }
 
 
+    /**
+     * calculates the derivative of the function
+     *
+     * @return the derivative of the function
+     */
     @Override
     public Function derivative() {
         Function[] functionsDerivative = new Function[functions.length];
@@ -44,10 +63,6 @@ public class Difference extends Function {
             i++;
         }
         return new Difference(functionsDerivative[0], functionsDerivative[1]);
-    }
-
-    public Function taylorPolynomial(int n) {
-        return super.taylorPolynomial(n);
     }
 
 }
