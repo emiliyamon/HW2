@@ -108,9 +108,6 @@ abstract class Function {
             }
 
             double termCoefficient = f.valueAt(0) / factorial(i);
-            if (Double.isNaN(termCoefficient)) { // check later if ok to use
-                termCoefficient = 0;
-            }
             coefficients[i] = termCoefficient;
         }
         return new Polynomial(coefficients);
