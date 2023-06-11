@@ -20,6 +20,7 @@ public class DateTime extends Date {
     public int getHour() {
         return hour;
     }
+    @Override
     public boolean inRange(int num, int lowerBound, int upperBound) {
         return (num >= lowerBound && num <= upperBound);
     }
