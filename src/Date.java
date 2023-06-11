@@ -89,7 +89,7 @@ public class Date {
 
 
     /**
-     * Returns a hash code value for the object based on the number of days passed/left to the date 01/01/-3999
+     * Returns a hash code value for the object based on the number of days passed/left to the date 01/01/-3999.
      *
      * @return a hash value for the object
      */
@@ -98,7 +98,11 @@ public class Date {
         return day + 31 * month + 31 * 12 * (year + 3999);
     }
 
-
+    /**
+     * Formatting the date into string format.
+     *
+     * @return String represents the date in string format
+     */
     @Override
     public String toString() {
         day = getDay();

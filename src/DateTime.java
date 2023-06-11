@@ -40,10 +40,10 @@ public class DateTime extends Date {
     }
 
     /**
-     * Indicates whether another object is equal to current object
+     * Indicates whether another object is equal to current object.
      *
      * @param other the referenced object with which to compare.
-     * @return boolean true or false according to the result of the method testing
+     * @return boolean true or false according to the result of the method testing.
      */
     @Override
     public boolean equals(Object other) {
@@ -63,6 +63,11 @@ public class DateTime extends Date {
     public int hashCode() {
         return minute + 60 * hour;
     }
+    /**
+     * Formatting the date into string format.
+     *
+     * @return String represents the date in string format
+     */
     @Override
     public String toString(){
        String DayMonthYearString = super.toString();
