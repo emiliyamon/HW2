@@ -1,13 +1,11 @@
 public class MultiProduct extends Function {
     public Function[] functions;
 
-    public MultiProduct(Function function1, Function function2, Function... moreFunctions) {
-        this.functions = new Function[2 + moreFunctions.length];
-        functions[0] = function1;
-        functions[1] = function2;
-        for (int i = 2; i < moreFunctions.length; i++) {
-            functions[i] = moreFunctions[i];
+    public MultiProduct(Function... functions) {
+        if (functions.length < 2) {
+            throw new IllegalArgumentException("MultiProduct requires at least two functions");
         }
+        this.functions = functions;
     }
 
 
@@ -30,6 +28,7 @@ public class MultiProduct extends Function {
             sb.append(function.toString());
             sb.append(") * ");
         }
+
         for (int i = 0; i < 3; i++) { // eliminate the trailing symbol
             sb.deleteCharAt(sb.length() - 1); // check later if ok to use
         }
@@ -58,38 +57,25 @@ public class MultiProduct extends Function {
                 }
             }
 
+            Function multiProductI;
+
             if (makeMultiProductI.length > 2) {
-                Function[] makeMultiProductIConstructor = new Function[makeMultiProductI.length - 2];
-                makeMultiProductIConstructor[0] = makeMultiProductI[0];
-                makeMultiProductIConstructor[1] = makeMultiProductI[1];
-
-                for (int k = 0; i < makeMultiProductIConstructor.length; i++) {
-                    makeMultiProductIConstructor[k] = makeMultiProductI[k + 2];
-                }
-
-                Function multiProductI = new MultiProduct(makeMultiProductI[0], makeMultiProductI[1], makeMultiProductIConstructor);
-                derivativeMultiProductI[i] = new Product(functionsDerivative[i], multiProductI);
+                multiProductI = new MultiProduct(makeMultiProductI);
             } else if (makeMultiProductI.length == 2) {
-                Function multiProductI = new MultiProduct(makeMultiProductI[0], makeMultiProductI[1]);
-                derivativeMultiProductI[i] = new Product(functionsDerivative[i], multiProductI);
+                multiProductI = new Product(makeMultiProductI[0], makeMultiProductI[1]);
             } else {
-                Function multiProductI = makeMultiProductI[0];
-                derivativeMultiProductI[i] = new Product(functionsDerivative[i], multiProductI);
+                multiProductI = makeMultiProductI[0];
             }
+
+            derivativeMultiProductI[i] = new Product(functionsDerivative[i], multiProductI);
         }
 
         if (derivativeMultiProductI.length > 2) {
-            Function[] derivativeMultiProductIConstructor = new Function[derivativeMultiProductI.length - 2];
-
-            for (int k = 0; k < derivativeMultiProductIConstructor.length; k++) {
-                derivativeMultiProductIConstructor[k] = derivativeMultiProductI[k + 2];
-            }
-            return new MultiSum(derivativeMultiProductI[0], derivativeMultiProductI[1], derivativeMultiProductIConstructor);
+            return new MultiSum(derivativeMultiProductI);
         } else if (derivativeMultiProductI.length == 2) {
             return new Sum(derivativeMultiProductI[0], derivativeMultiProductI[1]);
         } else {
-            return (derivativeMultiProductI[0]);
+            return derivativeMultiProductI[0];
         }
-
     }
 }

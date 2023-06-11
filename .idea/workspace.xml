@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bdd43fff-1fb9-4fe6-aa6f-837fdea39ae8" name="Changes" comment="1006 2219 when you try to fix one mistake you find another 17 - but the original is still not working">
+    <list default="true" id="bdd43fff-1fb9-4fe6-aa6f-837fdea39ae8" name="Changes" comment="1106 0752 changed a lot of stuff everywhere and made the code ugly, but it's still not working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MultiProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MultiProduct.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MultiSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MultiSum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Polynomial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Polynomial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Power.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Power.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +24,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="fork" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -264,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686424808345</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="1106 0752 changed a lot of stuff everywhere and made the code ugly, but it's still not working">
+      <created>1686459145614</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1686459145614</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -279,7 +293,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="0306 1544 updates in class Date" />
     <MESSAGE value="0306 1549 done with class Date (for now)" />
     <MESSAGE value="0306 1801 updates in Function, Constant" />
     <MESSAGE value="0306 1801 updates in Function" />
@@ -304,6 +317,7 @@
     <MESSAGE value="1006 2047 still not working" />
     <MESSAGE value="1006 2147 still not working" />
     <MESSAGE value="1006 2219 when you try to fix one mistake you find another 17 - but the original is still not working" />
-    <option name="LAST_COMMIT_MESSAGE" value="1006 2219 when you try to fix one mistake you find another 17 - but the original is still not working" />
+    <MESSAGE value="1106 0752 changed a lot of stuff everywhere and made the code ugly, but it's still not working" />
+    <option name="LAST_COMMIT_MESSAGE" value="1106 0752 changed a lot of stuff everywhere and made the code ugly, but it's still not working" />
   </component>
 </project>

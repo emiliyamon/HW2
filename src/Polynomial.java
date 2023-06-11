@@ -57,27 +57,16 @@ public class Polynomial extends Function {
 
     @Override
     public Function derivative() {
-        double[] derivativeCoefficient = new double[coefficients.length];
-        for (int i = 0; i < coefficients.length; i++) {
-            derivativeCoefficient[i] = coefficients[i] * i;
+        if (coefficients.length == 0) {
+            return new Constant(0);
         }
 
-        Function[] derivativeBase = new Function[coefficients.length];
-        for (int i = 1; i < coefficients.length; i++) {
-            derivativeBase[i] = new Power(new Polynomial(1), i-1);
+        double[] derivativeCoefficient = new double[coefficients.length - 1];
+        for (int i = 0; i < coefficients.length - 1; i++) {
+            derivativeCoefficient[i] = coefficients[i + 1] * (i + 1);
         }
 
-        Function[] derivativeFunction = new Function[coefficients.length];
-        for (int i = 0; i < coefficients.length; i++) {
-            derivativeFunction[i] = new Product(new Constant(derivativeCoefficient[i]), derivativeBase[i]);
-        }
-
-        Function[] derivativeFunctionConstructor = new Function[derivativeFunction.length - 2];
-
-        for (int k = 0; k < derivativeFunctionConstructor.length; k++) {
-            derivativeFunctionConstructor[k] = derivativeFunction[k+2];
-        }
-        return new MultiSum(derivativeFunction[0], derivativeFunction[1], derivativeFunctionConstructor);
+        return new Polynomial(derivativeCoefficient);
     }
 
 }

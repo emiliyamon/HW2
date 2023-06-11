@@ -1,13 +1,11 @@
 public class MultiSum extends Function {
     public Function[] functions;
 
-    public MultiSum(Function function1, Function function2, Function... moreFunctions) {
-        this.functions = new Function[2 + moreFunctions.length];
-        functions[0] = function1;
-        functions[1] = function2;
-        for (int i = 2; i < moreFunctions.length; i++) {
-            functions[i] = moreFunctions[i];
+    public MultiSum(Function... functions) {
+        if (functions.length < 2) {
+            throw new IllegalArgumentException("MultiSum requires at least two functions");
         }
+        this.functions = functions;
     }
 
 
@@ -49,15 +47,11 @@ public class MultiSum extends Function {
         }
 
         if (functionsDerivative.length > 2) {
-            Function[] functionsDerivativeConstructor = new Function[functionsDerivative.length - 2];
-            for (int k = 0; k < functionsDerivativeConstructor.length; k++) {
-                functionsDerivativeConstructor[k] = functionsDerivative[k + 2];
-            }
-            return new MultiSum(functionsDerivative[0], functionsDerivative[1], functionsDerivativeConstructor);
+            return new MultiSum(functionsDerivative);
         } else if (functionsDerivative.length == 2) {
-            return new MultiSum(functionsDerivative[0], functionsDerivative[1]);
+            return new Sum(functionsDerivative[0], functionsDerivative[1]);
         } else {
-            return (functionsDerivative[0]);
+            return functionsDerivative[0];
         }
     }
 }
