@@ -39,21 +39,23 @@ public class MultiProduct extends Function {
 
     @Override
     public Function derivative() {
-        Function[] functionsDerivative = new Function[functions.length];
-        int i = 0;
-
-        for (Function function : functions) {
-            functionsDerivative[i] = function.derivative();
-            i++;
+        if (functions.length == 1) {
+            return functions[0].derivative();
         }
 
+        Function[] functionsDerivative = new Function[functions.length];
         Function[] derivativeMultiProductI = new Function[functions.length];
 
-        for (i = 0; i < functions.length; i++) {
+
+        for (int i = 0; i < functions.length; i++) {
+            functionsDerivative[i] = functions[i].derivative();
+
             Function[] makeMultiProductI = new Function[functions.length - 1];
-            for (int j = 0; j < makeMultiProductI.length; j++) {
+            int k = 0;
+            for (int j = 0; j < functions.length; j++) {
                 if (j != i) {
-                    makeMultiProductI[j] = functions[j];
+                    makeMultiProductI[k] = functions[j];
+                    k++;
                 }
             }
 
