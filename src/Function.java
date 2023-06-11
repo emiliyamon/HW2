@@ -14,7 +14,7 @@ abstract class Function {
 
         double left = a;
         double right = b;
-        while (right - left > epsilon) {
+        while (right - left >= epsilon) {
             double mid = (left + right) / 2.0;
             if (this.valueAt(mid) == 0) {
                 return mid;
@@ -28,20 +28,7 @@ abstract class Function {
     }
 
     public double bisectionMethod(double a, double b) {
-        double left = a;
-        double right = b;
-        double epsilon = 0.00001;
-        while (right - left > epsilon) {
-            double mid = (left + right) / 2.0;
-            if (this.valueAt(mid) == 0) {
-                return mid;
-            } else if (this.valueAt(left) * this.valueAt(mid) > 0) {
-                left = mid;
-            } else {
-                right = mid;
-            }
-        }
-        return (left + right) / 2.0;
+        return bisectionMethod(a, b, Math.pow(10,-5));
     }
 
     public double newtonRaphsonMethod(double a, double epsilon) {
@@ -62,21 +49,7 @@ abstract class Function {
     }
 
     public double newtonRaphsonMethod(double a) {
-        double x = a;
-        double epsilon = 0.00001;
-        double fx0 = this.valueAt(x);
-        Function dfx = this.derivative();
-        double dfx0 = dfx.valueAt(x);
-        double deltaX = fx0 / dfx0;
-
-        while (Math.abs(deltaX) >= epsilon) {
-            x -= deltaX;
-            fx0 = this.valueAt(x);
-            dfx0 = dfx.valueAt(x);
-            deltaX = fx0 / dfx0;
-        }
-
-        return x;
+        return newtonRaphsonMethod(a, Math.pow(10, -5));
     }
 
     public Function taylorPolynomial(int n) {

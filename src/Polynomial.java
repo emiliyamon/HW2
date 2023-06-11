@@ -23,10 +23,28 @@ public class Polynomial extends Function {
     public String toString() {
         String[] terms = new String[coefficients.length];
         StringBuilder sb = new StringBuilder();
-
         sb.append("(");
 
+        if (coefficients.length == 1 && coefficients[0] == 0) {
+            sb.append("0)");
+            return sb.toString();
+        }
+
+        boolean allZero = true;
         for (int i = 0; i < coefficients.length; i++) {
+            if (coefficients[i] != 0) {
+                allZero = false;
+                break;
+            }
+        }
+        if (allZero) {
+            sb.append("0)");
+            return sb.toString();
+        }
+
+        for (int i = 0; i < coefficients.length; i++) {
+            double coefficient = Math.abs(coefficients[i]);
+
             if (coefficients[i] == 0.0) {
                 terms[i] = "";
             } else if (i == 0) {
@@ -37,18 +55,16 @@ public class Polynomial extends Function {
                 }
             } else if (i == 1) {
                 if (coefficients[i] == (int) coefficients[i]) {
-                    terms[i] = (int) coefficients[i] + "x";
+                    terms[i] = (int) coefficient + "x";
                 } else {
-                    terms[i] = coefficients[i] + "x";
+                    terms[i] = coefficient + "x";
                 }
-            } else if (coefficients[i] == 1.0) {
+            } else if (coefficients[i] == 1.0 || coefficients[i] == -1.0) {
                 terms[i] = "x^" + i;
-            } else if (coefficients[i] == -1.0) {
-                terms[i] = "-x^" + i;
             } else if (coefficients[i] == (int) coefficients[i]) {
-                terms[i] = (int) coefficients[i] + "x^" + i;
+                terms[i] = (int) coefficient + "x^" + i;
             } else {
-                terms[i] = coefficients[i] + "x^" + i;
+                terms[i] = coefficient + "x^" + i;
             }
 
             if (coefficients[i] == 0 || i == 0) {
@@ -59,7 +75,7 @@ public class Polynomial extends Function {
                 } else {
                     sb.append("");
                 }
-            } else if (coefficients[i] < 0 && i > 1) {
+            } else if (coefficients[i] < 0) {
                 if (sb.length() > 1) {
                     sb.append(" - ");
                 } else {

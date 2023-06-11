@@ -43,7 +43,7 @@ public class Quotient extends Function {
             i++;
         }
         return new Quotient((new Difference(new Product(functionsDerivative[0], this.functions[1]),
-                new Product(this.functions[0], functionsDerivative[1]))),
+                new Product(functionsDerivative[1], this.functions[0]))),
                 new Power(this.functions[1], 2));
     }
 
